@@ -50,7 +50,7 @@
     const requirements=[
       {id:1,title:"今日是否需要带伞",module:"生活组件",source:"用户反馈",sourceDetail:"社媒 / 客诉",sourceOriginal:"希望屏幕能直接告诉我今天要不要带伞，不想只看到降水概率，还要自己判断。",status:"待发布",priority:"P0",teams:["Web","后台"],lock:"07-08",dev:"07-10",test:"07-18",release:"07-24",progress:82,risk:"正常",description:"根据未来降水情况输出带伞结论"},
       {id:2,title:"室内空气质量状态",module:"环境组件",source:"用户反馈",sourceDetail:"设备联动建议",sourceOriginal:"希望把室内空气质量显示成容易理解的状态，并告诉我什么时候适合开窗通风。",status:"设计中",priority:"P0",teams:["Web","后台"],lock:"07-10",dev:"07-12",test:"07-20",release:"07-24",progress:64,risk:"关注",description:"展示空气质量结论与通风建议"},
-      {id:3,title:"今日洗衣指数（日本）",module:"生活组件",source:"市场规划",sourceDetail:"日本市场",sourceOriginal:"日本用户日常关注洗衣与晾晒条件，需要根据天气给出今天是否适合洗衣、室内或室外晾晒的建议。",status:"待发布",priority:"P0",teams:["Web","后台"],lock:"07-10",dev:"07-15",test:"07-24",release:"07-29",progress:56,risk:"关注",description:"输出洗衣与晾晒建议"},
+      {id:3,title:"今日洗衣指数（日本）",module:"生活组件",source:"市场规划",sourceDetail:"日本市场",sourceOriginal:"日本用户日常关注洗衣与晾晒条件，需要根据天气给出今天是否适合洗衣、室内或室外晾晒的建议。",status:"待发布",priority:"P0",teams:["Web","后台"],lock:"07-10",dev:"07-15",test:"07-24",release:"07-24",progress:56,risk:"关注",description:"输出洗衣与晾晒建议"},
       {id:4,title:"绝对湿度",module:"环境组件",source:"内部规划",sourceDetail:"产品规划",sourceOriginal:"在现有相对湿度组件基础上补充绝对湿度，让用户了解空气中的实际水汽含量。",status:"待发布",priority:"P0",teams:["Web","后台"],lock:"07-08",dev:"07-10",test:"07-18",release:"07-24",progress:76,risk:"正常",description:"展示空气实际水汽含量"},
       {id:5,title:"日本垃圾日",module:"生活组件",source:"市场规划",sourceDetail:"日本本地化",sourceOriginal:"日本不同自治体的垃圾回收规则不同，用户希望在屏幕上直接看到今天要丢什么垃圾以及本周安排。",status:"设计中",priority:"P0",teams:["产品","Web","后台"],lock:"07-24",dev:"07-27",test:"08-03",release:"08-07",progress:32,risk:"高风险",description:"展示今日垃圾类型及一周预告"},
       {id:6,title:"多成员日程同页展示",module:"日程",source:"Zendesk",sourceDetail:"1269409",sourceOriginal:"家庭成员希望在同一个页面看到所有人的日程，并且能快速区分每条日程属于谁。",status:"设计中",priority:"P0",teams:["Web","App","后台"],lock:"07-31",dev:"08-03",test:"08-10",release:"08-14",progress:48,risk:"关注",description:"聚合多个家庭成员的日程"},
@@ -69,7 +69,7 @@
     const rowRoot=document.getElementById("requirementRows"),scheduleRoot=document.getElementById("scheduleRows"),pagination=document.getElementById("pagination");
     let planFilter="全部",currentPage=1;
     const pageSize=10,statusOrder={"已发布":0,"待发布":1,"设计中":2,"开发中":3,"测试中":4,"需求池":5};
-    const statusStorageKey="eink-requirement-statuses-v2",dateStorageKey="eink-requirement-dates-v3",phaseOrder=["lock","dev","test","release"];
+    const statusStorageKey="eink-requirement-statuses-v2",dateStorageKey="eink-requirement-dates-v4",phaseOrder=["lock","dev","test","release"];
     try{
       const savedStatuses=JSON.parse(localStorage.getItem(statusStorageKey)||"{}");
       requirements.forEach(r=>{if(Object.prototype.hasOwnProperty.call(statusOrder,savedStatuses[r.id]))r.status=savedStatuses[r.id]});
