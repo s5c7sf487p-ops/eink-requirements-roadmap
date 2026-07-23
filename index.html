@@ -55,8 +55,8 @@
       {id:5,title:"日本垃圾日",module:"生活组件",source:"市场规划",sourceDetail:"日本本地化",sourceOriginal:"日本不同自治体的垃圾回收规则不同，用户希望在屏幕上直接看到今天要丢什么垃圾以及本周安排。",status:"设计中",priority:"P0",teams:["产品","Web","后台"],lock:"07-24",dev:"07-27",test:"08-03",release:"08-07",progress:32,risk:"高风险",description:"展示今日垃圾类型及一周预告"},
       {id:6,title:"多成员日程同页展示",module:"日程",source:"Zendesk",sourceDetail:"1269409",sourceOriginal:"家庭成员希望在同一个页面看到所有人的日程，并且能快速区分每条日程属于谁。",status:"设计中",priority:"P0",teams:["Web","App","后台"],lock:"07-31",dev:"08-03",test:"08-10",release:"08-14",progress:48,risk:"关注",description:"聚合多个家庭成员的日程"},
       {id:7,title:"CalDAV 日程同步",module:"日程",source:"Zendesk",sourceDetail:"1264859",sourceOriginal:"希望接入支持 CalDAV 的日历服务，将更多第三方日历同步到 Home Dashboard。",status:"设计中",priority:"P0",teams:["Web","App","后台"],lock:"07-15",dev:"07-25",test:"08-05",release:"08-13",progress:38,risk:"高风险",description:"连接更多第三方日历"},
-      {id:8,title:"Web / App 设置同步",module:"同步",source:"体验问题",sourceDetail:"跨端操作割裂",sourceOriginal:"用户在 App 和网页端修改同一页面时，设置结果不一致，容易出现覆盖或不知道哪一端生效的问题。",status:"设计中",priority:"P0",teams:["Web","App","后台"],lock:"07-14",dev:"07-17",test:"07-24",release:"07-29",progress:52,risk:"高风险",description:"统一页面与模板设置"},
-      {id:9,title:"手机 / 平板适配",module:"Web体验",source:"内部规划",sourceDetail:"多设备适配",sourceOriginal:"网页编辑器需要适配手机和平板，优先解决触控、画布缩放和小屏信息密度问题。",status:"设计中",priority:"P0",teams:["设计","Web"],lock:"07-22",dev:"07-29",test:"08-08",release:"08-14",progress:24,risk:"高风险",description:"适配触控与小屏编辑"},
+      {id:8,title:"Web / App 设置同步",module:"同步",source:"体验问题",sourceDetail:"跨端操作割裂",sourceOriginal:"用户在 App 和网页端修改同一页面时，设置结果不一致，容易出现覆盖或不知道哪一端生效的问题。",status:"设计中",priority:"P0",teams:["Web","App","后台"],lock:"07-31",dev:"08-03",test:"08-10",release:"08-15",progress:52,risk:"高风险",description:"统一页面与模板设置"},
+      {id:9,title:"手机 / 平板适配",module:"Web体验",source:"内部规划",sourceDetail:"多设备适配",sourceOriginal:"网页编辑器需要适配手机和平板，优先解决触控、画布缩放和小屏信息密度问题。",status:"设计中",priority:"P0",teams:["设计","Web"],lock:"07-31",dev:"08-07",test:"08-17",release:"08-23",progress:24,risk:"高风险",description:"适配触控与小屏编辑"},
       {id:10,title:"Shopping List",module:"模板",source:"竞品启发",sourceDetail:"待调研",sourceOriginal:"看到家庭信息屏上的共享购物清单场景，考虑是否适合纳入我们的可自定义内容体系，当前仍待调研。",status:"设计中",priority:"P1",teams:["产品","Web"],lock:"待定",dev:"待定",test:"待定",release:"待定",progress:10,risk:"关注",description:"家庭共享购物清单"},
       {id:11,title:"相对湿度",module:"环境组件",source:"内部规划",sourceDetail:"产品规划",sourceOriginal:"在现有环境信息展示基础上补充相对湿度组件，让用户了解当前空气湿度水平。",status:"待发布",priority:"P0",teams:["Web","后台"],lock:"07-08",dev:"07-10",test:"07-18",release:"07-24",progress:76,risk:"正常",description:"展示当前空气相对湿度"},
       {id:12,title:"埋点数据",module:"数据基础建设",source:"内部规划",sourceDetail:"数据建设",sourceOriginal:"需要补齐关键页面、组件配置与发布链路的行为埋点，为后续功能效果评估和问题定位提供基础数据。",status:"设计中",priority:"P0",teams:["Web","App","后台"],lock:"07-24",dev:"07-27",test:"08-03",release:"08-07",progress:20,risk:"关注",description:"补齐核心行为与发布链路数据"},
@@ -69,7 +69,7 @@
     const rowRoot=document.getElementById("requirementRows"),scheduleRoot=document.getElementById("scheduleRows"),pagination=document.getElementById("pagination");
     let planFilter="全部",currentPage=1;
     const pageSize=10,statusOrder={"已发布":0,"待发布":1,"设计中":2,"开发中":3,"测试中":4,"需求池":5};
-    const statusStorageKey="eink-requirement-statuses-v2",dateStorageKey="eink-requirement-dates-v2",phaseOrder=["lock","dev","test","release"];
+    const statusStorageKey="eink-requirement-statuses-v2",dateStorageKey="eink-requirement-dates-v3",phaseOrder=["lock","dev","test","release"];
     try{
       const savedStatuses=JSON.parse(localStorage.getItem(statusStorageKey)||"{}");
       requirements.forEach(r=>{if(Object.prototype.hasOwnProperty.call(statusOrder,savedStatuses[r.id]))r.status=savedStatuses[r.id]});
